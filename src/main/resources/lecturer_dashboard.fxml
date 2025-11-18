@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sams.controller.LecturerDashboardController" prefWidth="600" prefHeight="400">
+    <top>
+        <Label text="Lecturer Dashboard" style="-fx-font-size: 20px; -fx-padding: 10;" BorderPane.alignment="CENTER" />
+    </top>
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <Button text="Manage Class Schedules" onAction="#openManageSchedules" prefWidth="200" />
+            <Button text="Mark Attendance" onAction="#openMarkAttendance" prefWidth="200" />
+            <Button text="View Reports" onAction="#openViewReports" prefWidth="200" />
+            <Button text="Logout" onAction="#logout" prefWidth="200" />
+        </VBox>
+    </center>
+</BorderPane>

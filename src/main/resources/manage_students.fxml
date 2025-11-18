@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sams.controller.ManageStudentsController" spacing="10" prefWidth="800" prefHeight="600">
+    <Label text="Manage Students" style="-fx-font-size: 18px;" />
+    
+    <!-- Table for listing students -->
+    <TableView fx:id="studentsTable">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50" />
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="150" />
+            <TableColumn fx:id="regNumberColumn" text="Reg Number" prefWidth="150" />
+            <TableColumn fx:id="courseColumn" text="Course" prefWidth="150" />
+            <TableColumn fx:id="contactColumn" text="Contact" prefWidth="200" />
+        </columns>
+    </TableView>
+    
+    <!-- Form for add/update -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        
+        <Label text="Reg Number:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="regNumberField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        
+        <Label text="Course:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <ComboBox fx:id="courseComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1" /> <!-- Populate with courses -->
+        
+        <Label text="Contact:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TextField fx:id="contactField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Add Student" onAction="#addStudent" />
+        <Button text="Update Student" onAction="#updateStudent" />
+        <Button text="Delete Student" onAction="#deleteStudent" />
+        <Button text="Clear Form" onAction="#clearForm" />
+    </HBox>
+</VBox>

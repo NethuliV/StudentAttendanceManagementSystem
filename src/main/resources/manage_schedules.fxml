@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sams.controller.ManageSchedulesController" spacing="10" prefWidth="800" prefHeight="600">
+    <Label text="Manage Class Schedules" style="-fx-font-size: 18px;" />
+    
+    <!-- Table for listing schedules -->
+    <TableView fx:id="schedulesTable">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50" />
+            <TableColumn fx:id="courseColumn" text="Course" prefWidth="150" />
+            <TableColumn fx:id="subjectColumn" text="Subject" prefWidth="150" />
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100" />
+            <TableColumn fx:id="lecturerColumn" text="Lecturer" prefWidth="150" />
+        </columns>
+    </TableView>
+    
+    <!-- Form for add/update -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Course:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <ComboBox fx:id="courseComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        
+        <Label text="Subject:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="subjectField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        
+        <Label text="Date:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <DatePicker fx:id="datePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+        
+        <Label text="Lecturer:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <ComboBox fx:id="lecturerComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Add Schedule" onAction="#addSchedule" />
+        <Button text="Update Schedule" onAction="#updateSchedule" />
+        <Button text="Delete Schedule" onAction="#deleteSchedule" />
+        <Button text="Clear Form" onAction="#clearForm" />
+    </HBox>
+</VBox>

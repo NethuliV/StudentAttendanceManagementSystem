@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sams.controller.ViewReportsController" spacing="10" prefWidth="800" prefHeight="600">
+    <Label text="Attendance Reports" style="-fx-font-size: 18px;" />
+    
+    <!-- Filters -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Student:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <ComboBox fx:id="studentComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        
+        <Label text="Course:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <ComboBox fx:id="courseComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        
+        <Label text="Start Date:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <DatePicker fx:id="startDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+        
+        <Label text="End Date:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <DatePicker fx:id="endDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    </GridPane>
+    
+    <Button text="Generate Report" onAction="#generateReport" />
+    
+    <!-- Table for report data -->
+    <TableView fx:id="reportTable">
+        <columns>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100" />
+            <TableColumn fx:id="courseColumn" text="Course" prefWidth="150" />
+            <TableColumn fx:id="studentColumn" text="Student" prefWidth="150" />
+            <TableColumn fx:id="presentColumn" text="Present" prefWidth="100" />
+        </columns>
+    </TableView>
+    
+    <Button text="Export to CSV" onAction="#exportToCSV" />
+</VBox>

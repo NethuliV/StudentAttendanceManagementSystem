@@ -1,0 +1,16 @@
+# Maven build files
+target/
+*.jar
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Logs and temp
+*.log
+*.tmp
+
+# Sensitive config (don't commit passwords)
+# Uncomment if hibernate.cfg.xml has real passwords
+# hibernate.cfg.xml

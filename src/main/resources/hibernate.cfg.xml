@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+           <!-- Added allowPublicKeyRetrieval for dev environments where MySQL server requires it.
+               For production, prefer configuring user auth or server public key instead. -->
+           <!-- '&' must be escaped in XML to '&amp;' otherwise JAXB/XML parser fails -->
+           <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sams_db?useSSL=false&amp;allowPublicKeyRetrieval=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">123789</property> <!-- Change to your password -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property> <!-- Auto-updates schema -->
+
+        <!-- List entities here -->
+        <mapping class="com.sams.entity.User"/>
+        <mapping class="com.sams.entity.Course"/>
+        <mapping class="com.sams.entity.Student"/>
+        <mapping class="com.sams.entity.Lecturer"/>
+        <mapping class="com.sams.entity.ClassSchedule"/>
+        <mapping class="com.sams.entity.Attendance"/>
+    </session-factory>
+</hibernate-configuration>

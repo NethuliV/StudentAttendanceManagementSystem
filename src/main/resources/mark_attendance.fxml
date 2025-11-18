@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sams.controller.MarkAttendanceController" spacing="10" prefWidth="800" prefHeight="600">
+    <Label text="Mark Attendance" style="-fx-font-size: 18px;" />
+    
+    <!-- Select schedule -->
+    <HBox spacing="10">
+        <Label text="Select Class Schedule:" />
+        <ComboBox fx:id="scheduleComboBox" prefWidth="300" />
+        <Button text="Load Students" onAction="#loadStudents" />
+    </HBox>
+    
+    <!-- Table for students with checkboxes -->
+    <TableView fx:id="attendanceTable">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50" />
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="200" />
+            <TableColumn fx:id="regNumberColumn" text="Reg Number" prefWidth="150" />
+            <TableColumn fx:id="presentColumn" text="Present" prefWidth="100" /> <!-- Use CheckBoxTableCell in controller -->
+        </columns>
+    </TableView>
+    
+    <Button text="Save Attendance" onAction="#saveAttendance" />
+</VBox>
