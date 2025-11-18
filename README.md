@@ -24,8 +24,4 @@ A system to manage student attendance, courses, lecturers, schedules, and report
 - Admin: username `admin`, password `adminpass`
 - Lecturer: username `lecturer1`, password `lectpass`
 
-## Screenshots
 
-- Login Screen: ![Login](screenshots/login.png)
-- Admin Dashboard: ![Admin Dashboard](screenshots/admin_dashboard.png)
-  (Add more as needed)
